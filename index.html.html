@@ -1,208 +1,275 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aurium (AUR) – Web3 Ecosystem</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aurium (AUR) — Web3 Ecosystem</title>
+  <!-- Tailwind CDN (quick use) -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-    }
-
-    header {
-      background: linear-gradient(90deg, #004080, #d4af37);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0 0 10px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin: 0 0 20px;
-    }
-
-    header .buttons a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 24px;
-      border-radius: 30px;
-      text-decoration: none;
-      color: #004080;
-      background: #fff;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    header .buttons a:hover {
-      background: #d4af37;
-      color: #fff;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    section h2 {
-      text-align: center;
-      color: #004080;
-      margin-bottom: 30px;
-      font-size: 2rem;
-    }
-
-    .benefits ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .benefits li {
-      font-size: 1.1rem;
-      margin: 15px 0;
-      padding: 12px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    th, td {
-      padding: 15px;
-      text-align: center;
-      border-bottom: 1px solid #eee;
-    }
-
-    th {
-      background: #004080;
-      color: #fff;
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    footer {
-      background: #004080;
-      color: #fff;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    footer h2 {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-      color: #d4af37;
-    }
-
-    footer .social-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    footer .social-links li {
-      margin: 10px 0;
-    }
-
-    footer .social-links a {
-      text-decoration: none;
-      font-size: 1.2rem;
-      color: #fff;
-      transition: 0.3s;
-    }
-
-    footer .social-links a:hover {
-      color: #d4af37;
-    }
+    /* Small visual tweaks */
+    .gradient-gold { background: linear-gradient(90deg, #0b3a66 0%, #0f4f86 50%, #d4af37 100%); }
+    .card-shadow { box-shadow: 0 6px 20px rgba(6, 30, 61, 0.12); }
   </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 antialiased">
 
-  <!-- Hero -->
-  <header>
-    <h1>Aurium (AUR) – Web3 Ecosystem</h1>
-    <p>A decentralized token powering Play-to-Earn games, NFTs, and DeFi,<br>
-       with stable liquidity in USDC and continuous rewards for holders.</p>
-    <div class="buttons">
-      <a href="https://drive.google.com/drive/folders/14uKl_hTjyN9S6fzMKXqaTjkAXHaqqGlv" target="_blank">📄 Whitepaper</a>
-      <a href="https://polygonscan.com/address/YOUR_CONTRACT" target="_blank">🔗 Official Contract</a>
+  <!-- NAV -->
+  <header class="gradient-gold text-white">
+    <div class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <!-- Logo placeholder -->
+        <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+          <span class="font-bold text-lg text-white">A</span>
+        </div>
+        <div>
+          <div class="font-extrabold text-xl leading-none">Aurium</div>
+          <div class="text-xs text-white/80">AUR — Web3 Ecosystem</div>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-4">
+        <a href="#about" class="text-white/90 hover:text-white">About</a>
+        <a href="#tokenomics" class="text-white/90 hover:text-white">Tokenomics</a>
+        <a href="#roadmap" class="text-white/90 hover:text-white">Roadmap</a>
+        <a href="#community" class="text-white/90 hover:text-white">Community</a>
+        <a href="whitepaper.pdf" target="_blank" class="ml-4 bg-white text-[#004080] px-4 py-2 rounded-full font-semibold shadow-sm hover:opacity-95">Whitepaper</a>
+      </nav>
+
+      <div class="md:hidden">
+        <button id="menuBtn" class="p-2 rounded-md bg-white/10">
+          ☰
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- Key Benefits -->
-  <section class="benefits">
-    <h2>✨ Key Benefits</h2>
-    <ul>
-      <li>2% automatically redistributed on every transaction to holders.</li>
-      <li>Dynamic Fees: <strong>Buy</strong> (2% holders + 4% Dev) | <strong>Sell</strong> (2% holders + 3% Dev + 1% Liquidity).</li>
-      <li>Liquidity in USDC: stronger stability with the official <strong>AUR/USDC</strong> pair.</li>
-      <li>Development Fund: continuous resources for marketing, listings, and Web3 gaming.</li>
-      <li>Planned Liquidity: reinforced manually every 3 months, strengthening the pool and reducing volatility.</li>
-    </ul>
+  <!-- HERO -->
+  <section class="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-10">
+    <div class="md:w-6/12">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-sky-900">Aurium (AUR)</h1>
+      <p class="mt-4 text-lg text-slate-700">A decentralized token powering Play-to-Earn games, NFTs and DeFi — stable liquidity in USDC, continuous rewards for holders, and a roadmap focused on adoption and utility.</p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="https://drive.google.com/drive/folders/14uKl_hTjyN9S6fzMKXqaTjkAXHaqqGlv" target="_blank" class="inline-flex items-center gap-2 bg-[#004080] text-white px-4 py-3 rounded-full font-medium shadow card-shadow hover:opacity-95">
+          📄 Whitepaper
+        </a>
+        <a href="https://polygonscan.com/address/YOUR_CONTRACT" target="_blank" class="inline-flex items-center gap-2 border border-slate-200 bg-white px-4 py-3 rounded-full font-medium shadow hover:bg-slate-50">
+          🔗 Contract
+        </a>
+        <a href="#tokenomics" class="inline-flex items-center gap-2 text-slate-700 px-4 py-3 rounded-full hover:bg-slate-100">📊 Tokenomics</a>
+      </div>
+
+      <div class="mt-8 grid grid-cols-2 gap-3">
+        <div class="p-4 bg-white rounded-xl card-shadow">
+          <div class="text-sm text-slate-500">Buy Tax</div>
+          <div class="mt-2 font-semibold text-slate-900">2% Holders • 4% Dev</div>
+        </div>
+        <div class="p-4 bg-white rounded-xl card-shadow">
+          <div class="text-sm text-slate-500">Sell Tax</div>
+          <div class="mt-2 font-semibold text-slate-900">2% Holders • 3% Dev • 1% Liquidity</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:w-5/12 w-full">
+      <div class="bg-white p-6 rounded-2xl card-shadow">
+        <h3 class="text-lg font-bold text-sky-900">Quick Summary</h3>
+        <p class="mt-3 text-sm text-slate-600">Aurium distributes rewards to holders and secures the project's growth through a development fund. Liquidity is reinforced quarterly on the official <strong>AUR/USDC</strong> pair.</p>
+
+        <div class="mt-6 grid grid-cols-1 gap-3">
+          <div class="flex items-center justify-between">
+            <div class="text-sm text-slate-600">Reflection (Holders)</div>
+            <div class="font-semibold">2%</div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="text-sm text-slate-600">Dev Fund (Buy)</div>
+            <div class="font-semibold">4%</div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="text-sm text-slate-600">Dev Fund (Sell)</div>
+            <div class="font-semibold">3%</div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="text-sm text-slate-600">Liquidity (Sell reserved)</div>
+            <div class="font-semibold">1%</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Tokenomics -->
-  <section class="tokenomics">
-    <h2>📊 Tokenomics</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Holders</th>
-          <th>Dev</th>
-          <th>Liquidity</th>
-          <th>Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Buy</td>
-          <td>2%</td>
-          <td>4%</td>
-          <td>0%</td>
-          <td>6%</td>
-        </tr>
-        <tr>
-          <td>Sell</td>
-          <td>2%</td>
-          <td>3%</td>
-          <td>1%</td>
-          <td>6%</td>
-        </tr>
-      </tbody>
-    </table>
+  <!-- ABOUT -->
+  <section id="about" class="bg-white border-t border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-3xl font-extrabold text-sky-900">About Aurium</h2>
+          <p class="mt-4 text-slate-600">Aurium (AUR) is designed as a scalable, community-driven token on Polygon, aimed at powering a diverse Web3 ecosystem: Play-to-Earn games, NFTs with utility and DeFi integrations. The protocol emphasizes sustainability, transparency and long-term value creation for holders.</p>
+
+          <ul class="mt-6 space-y-3 text-slate-600">
+            <li>• Built on Polygon for low fees and high throughput.</li>
+            <li>• Tokenomics that reward long-term holders and fund growth.</li>
+            <li>• Governance planned via multisig & timelock for critical changes.</li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-slate-50 rounded-xl card-shadow">
+          <h3 class="text-lg font-semibold text-sky-900">Why Polygon?</h3>
+          <p class="mt-3 text-slate-600">Low transaction costs and wide DeFi ecosystem make Polygon ideal for game and NFT interactions — enabling Aurium to scale user experiences with minimal friction.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Footer / Socials -->
-  <footer>
-    <h2>🌐 Join the Aurium Community</h2>
-    <ul class="social-links">
-      <li>
-        <a href="https://x.com/AureumDeFi" target="_blank">🐦 Twitter / X</a>
-      </li>
-      <li>
-        <a href="https://www.instagram.com/aureum.project" target="_blank">📸 Instagram</a>
-      </li>
-    </ul>
-    <p style="margin-top:20px;">© 2025 Aurium Project – All rights reserved</p>
+  <!-- BENEFITS -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-extrabold text-center text-sky-900">Key Benefits</h2>
+    <div class="mt-8 grid md:grid-cols-3 gap-6">
+      <div class="p-6 bg-white rounded-xl card-shadow">
+        <h4 class="font-semibold text-lg">Rewards for Holders</h4>
+        <p class="mt-2 text-slate-600 text-sm">2% of every transaction is redistributed automatically among holders — no staking required.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl card-shadow">
+        <h4 class="font-semibold text-lg">Sustainable Development Fund</h4>
+        <p class="mt-2 text-slate-600 text-sm">A portion of fees funds marketing, partnerships and development of games & NFT utilities.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl card-shadow">
+        <h4 class="font-semibold text-lg">Planned Liquidity Reinforcement</h4>
+        <p class="mt-2 text-slate-600 text-sm">Liquidity increases are executed manually every quarter on the AUR/USDC pair to improve market depth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOKENOMICS -->
+  <section id="tokenomics" class="bg-white border-t border-b border-slate-100">
+    <div class="max-w-4xl mx-auto px-6 py-16">
+      <h2 class="text-3xl font-extrabold text-center text-sky-900">Tokenomics</h2>
+
+      <p class="mt-4 text-center text-slate-600">Fees differ depending on transaction direction. All fees are transparent and governed via on-chain events and multisig operations.</p>
+
+      <div class="mt-8 overflow-x-auto">
+        <table class="w-full text-sm rounded-lg overflow-hidden">
+          <thead class="bg-[#004080] text-white">
+            <tr>
+              <th class="py-3 px-4 text-left">Type</th>
+              <th class="py-3 px-4">Holders</th>
+              <th class="py-3 px-4">Dev</th>
+              <th class="py-3 px-4">Liquidity</th>
+              <th class="py-3 px-4">Total</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y">
+            <tr>
+              <td class="py-4 px-4 text-left font-medium">Buy</td>
+              <td class="py-4 px-4 text-center">2%</td>
+              <td class="py-4 px-4 text-center">4%</td>
+              <td class="py-4 px-4 text-center">0%</td>
+              <td class="py-4 px-4 text-center font-semibold">6%</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 text-left font-medium">Sell</td>
+              <td class="py-4 px-4 text-center">2%</td>
+              <td class="py-4 px-4 text-center">3%</td>
+              <td class="py-4 px-4 text-center">1%</td>
+              <td class="py-4 px-4 text-center font-semibold">6%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-6 text-sm text-slate-600">
+        <p><strong>Note:</strong> Liquidity reinforcements will be executed manually by the Aurium team using funds accumulated in the Dev Wallet and added to the official <strong>AUR/USDC</strong> pool every three months.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="roadmap" class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-extrabold text-center text-sky-900">Roadmap</h2>
+
+    <div class="mt-10 grid md:grid-cols-4 gap-6">
+      <div class="p-6 bg-white rounded-xl card-shadow">
+        <h4 class="font-bold">Phase 1 — Foundation</h4>
+        <p class="mt-2 text-sm text-slate-600">Token launch, community building, initial listings on DEX.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl card-shadow">
+        <h4 class="font-bold">Phase 2 — Expansion</h4>
+        <p class="mt-2 text-sm text-slate-600">Strategic partnerships, marketing campaigns, cross-chain exploration.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl card-shadow">
+        <h4 class="font-bold">Phase 3 — Ecosystem</h4>
+        <p class="mt-2 text-sm text-slate-600">Launch of Web3 games, NFT drops and marketplace integrations.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl card-shadow">
+        <h4 class="font-bold">Phase 4 — Global Scale</h4>
+        <p class="mt-2 text-sm text-slate-600">CEX listings, expanded game catalog, DAO/governance roadmap.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ECOSYSTEM -->
+  <section class="bg-white border-t border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <h2 class="text-3xl font-extrabold text-center text-sky-900">Aurium Ecosystem</h2>
+      <p class="mt-4 text-center text-slate-600 max-w-2xl mx-auto">Aurium is more than a token. It is the backbone for games, NFT experiences and DeFi utilities. Holders will access exclusive beta tests, NFT pre-sales and in-game benefits.</p>
+
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="p-6 bg-slate-50 rounded-xl card-shadow">
+          <h4 class="font-semibold">Play-to-Earn Games</h4>
+          <p class="mt-2 text-sm text-slate-600">Economies powered by AUR, rewarding skill and participation.</p>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-xl card-shadow">
+          <h4 class="font-semibold">NFT Utilities</h4>
+          <p class="mt-2 text-sm text-slate-600">NFTs that grant in-game perks, access and real utility across the ecosystem.</p>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-xl card-shadow">
+          <h4 class="font-semibold">DeFi Integrations</h4>
+          <p class="mt-2 text-sm text-slate-600">Staking, liquidity programs and yield utilities designed for holders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section id="community" class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-extrabold text-center text-sky-900">Join the Community</h2>
+
+    <div class="mt-8 flex flex-col md:flex-row gap-6 items-center justify-center">
+      <a href="https://x.com/AureumDeFi" target="_blank" class="w-full md:w-auto inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-[#004080] text-white font-semibold shadow">🐦 Twitter / X</a>
+      <a href="https://www.instagram.com/aureum.project" target="_blank" class="w-full md:w-auto inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-white border border-slate-200 text-slate-800 font-semibold shadow">📸 Instagram</a>
+    </div>
+
+    <p class="mt-6 text-center text-sm text-slate-500">Stay updated: follow our channels for announcements, airdrops and roadmap milestones.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#012a49] text-white">
+    <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <div class="font-bold text-lg">Aurium</div>
+        <div class="text-slate-300 text-sm">© 2025 Aurium Project — All rights reserved</div>
+      </div>
+      <div class="text-sm text-slate-300">
+        <div>Official contract: <a href="https://polygonscan.com/address/YOUR_CONTRACT" target="_blank" class="underline">polygonscan</a></div>
+        <div class="mt-2">Whitepaper: <a href="whitepaper.pdf" target="_blank" class="underline">Download</a></div>
+      </div>
+      <div>
+        <div class="flex items-center gap-3">
+          <a href="https://x.com/AureumDeFi" target="_blank" aria-label="Twitter/X" class="text-slate-300 hover:text-white">🐦</a>
+          <a href="https://www.instagram.com/aureum.project" target="_blank" aria-label="Instagram" class="text-slate-300 hover:text-white">📸</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
+  <script>
+    // small mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    menuBtn?.addEventListener('click', () => {
+      // naive mobile nav (you can replace with actual mobile menu)
+      alert('Mobile menu: use page anchors (About, Tokenomics, Roadmap, Community).');
+    });
+  </script>
 </body>
 </html>
-
