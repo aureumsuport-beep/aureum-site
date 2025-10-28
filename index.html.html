@@ -1,281 +1,284 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aureum (AUR) — Web3 Ecosystem</title>
-  <!-- Tailwind CDN (quick use) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Small visual tweaks */
-    .gradient-gold {
-  background: linear-gradient(90deg, #0a1a2f 0%, #004aad 50%, #d4af37 100%);
-}
-
-  </style>
-</head>
-<body class="bg-slate-50 text-slate-800 antialiased">
-
-  <!-- NAV -->
-  <header class="gradient-gold text-white">
-    <div class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-      <div class="flex items-center gap-4">
-<!-- Logo Aureum -->
-<img src="https://github.com/aureumsuport-beep/aureum-site/raw/main/logo.png.png" 
-     alt="Aureum Logo" 
-     style="height: 68px; margin-top: -2px;">
-
-        
-
-        <div>
-          <div class="font-extrabold text-xl leading-none">Aureum</div>
-          <div class="text-xs text-white/80">AUR — Web3 Ecosystem</div>
-        </div>
-      </div>
-
-      <nav class="hidden md:flex items-center gap-4">
-    <a href="#about" class="text-white/90 hover:text-white">About</a>
-    <a href="#tokenomics" class="text-white/90 hover:text-white">Tokenomics</a>
-    <a href="#roadmap" class="text-white/90 hover:text-white">Roadmap</a>
-    <a href="#community" class="text-white/90 hover:text-white">Community</a>
-
-    <a href="https://drive.google.com/drive/folders/14uKl_hTjyN9S6fzMKXqaTjkAXHaqqGlv" target="_blank" class="text-white/90 hover:text-white">Whitepaper</a>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Aureum (AUR) — Web3 Ecosystem on BNB Smart Chain</title>
     
-    <a href="https://aureum-presale.vercel.app/" target="_blank" class="ml-4 bg-white text-[#004080] px-4 py-2 rounded-full font-semibold shadow-sm hover:opacity-95">Pre-sale</a>
-</nav>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* BASE & COLORS */
+        :root {
+            --color-dark-bg: #0d0d18; 
+            --color-component-bg: #1a1a2e; 
+            --color-gold: #FFC300;
+            --color-neon-blue: #00bfff;
+        }
 
-      <div class="md:hidden">
-    <a href="https://aureum-presale.vercel.app/" target="_blank" class="bg-white text-[#004080] px-4 py-2 rounded-full font-semibold shadow-sm hover:opacity-95">Pre-sale</a>
-</div>
-    </div>
-  </header>
+        /* CUSTOM CLASSES FOR GLOW/NEON EFFECTS */
+        .glow-gold { text-shadow: 0 0 8px rgba(255, 195, 0, 0.6); }
+        .glow-blue { text-shadow: 0 0 8px rgba(0, 191, 255, 0.6); }
+        .bg-glow-gold { background-color: var(--color-gold); box-shadow: 0 0 15px rgba(255, 195, 0, 0.5); }
+        .bg-glow-blue { background-color: var(--color-neon-blue); box-shadow: 0 0 15px rgba(0, 191, 255, 0.5); }
+        
+        /* Gradient header (More aggressive Dark/Gold) */
+        .gradient-header { background: linear-gradient(90deg, #1A1A2E 0%, #0D0D18 80%); border-bottom: 2px solid rgba(255, 195, 0, 0.2); }
+        
+        /* Card style - Slight glass effect / Border */
+        .card-component { background-color: var(--color-component-bg); border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.3s ease; }
+        .card-component:hover { transform: translateY(-5px); border-color: var(--color-gold); box-shadow: 0 10px 30px rgba(255, 195, 0, 0.15); }
+        
+        /* Overriding Tailwind base colors for Dark Mode look */
+        .bg-slate-50 { background-color: var(--color-dark-bg) !important; }
+        .text-slate-800 { color: #f0f0f0 !important; }
+        .text-sky-900 { color: var(--color-gold) !important; }
+        .text-slate-600 { color: #b0b0b0 !important; }
+        .bg-white { background-color: #1a1a2e !important; }
+        .border-slate-100 { border-color: rgba(255, 255, 255, 0.1) !important; }
+        .bg-slate-500 { background-color: #4a4a6b !important; }
+        
+        /* Table Colors */
+        .tokenomics-table thead { background-color: #004080; }
+        .tokenomics-table td { background-color: var(--color-component-bg); border-color: rgba(255, 255, 255, 0.1); }
+        .tokenomics-table tr:hover td { background-color: #2a2a44; }
+    </style>
+</head>
 
-  <!-- HERO -->
-  <section class="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-10">
-    <div class="md:w-6/12">
-      <h1 class="text-4xl md:text-5xl font-extrabold text-sky-900">Aureum (AUR)</h1>
-      <p class="mt-4 text-lg text-slate-700">A decentralized token powering Play-to-Earn games, NFTs and DeFi — stable liquidity in USDC, continuous rewards for holders, and a roadmap focused on adoption and utility.</p>
+<body class="bg-slate-50 text-slate-800 antialiased font-['Inter']">
 
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a href="https://drive.google.com/drive/folders/14uKl_hTjyN9S6fzMKXqaTjkAXHaqqGlv" target="_blank" class="inline-flex items-center gap-2 bg-[#004080] text-white px-4 py-3 rounded-full font-medium shadow card-shadow hover:opacity-95">
-          📄 Whitepaper
-        </a>
-        <a href="https://polygonscan.com/address/0x2072fBD640d13b547261Cf13e47C96212fDE746b" target="_blank" class="inline-flex items-center gap-2 border border-slate-200 bg-white px-4 py-3 rounded-full font-medium shadow hover:bg-slate-50">
-          🔗 Contract
-        </a>
-        <a href="#tokenomics" class="inline-flex items-center gap-2 text-slate-700 px-4 py-3 rounded-full hover:bg-slate-100">📊 Tokenomics</a>
-      </div>
+    <header class="gradient-header text-white sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="Aureum Logo" class="w-8 h-8 rounded-full glow-gold" />
 
-      <div class="mt-8 grid grid-cols-2 gap-3">
-        <div class="p-4 bg-white rounded-xl card-shadow">
-          <div class="text-sm text-slate-500">Buy Tax</div>
-          <div class="mt-2 font-semibold text-slate-900">2% Holders • 4% Dev</div>
+                <div>
+                    <div class="font-extrabold text-xl leading-none text-white glow-gold">Aureum</div>
+                    <div class="text-xs text-white/60">AUR — Web3 Ecosystem</div>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-4">
+                <a href="#about" class="text-white/80 hover:text-white glow-blue">About</a>
+                <a href="#tokenomics" class="text-white/80 hover:text-white glow-blue">Tokenomics</a>
+                <a href="#roadmap" class="text-white/80 hover:text-white glow-blue">Roadmap</a>
+                <a href="#community" class="text-white/80 hover:text-white glow-blue">Community</a>
+                
+                <a href="https://pancakeswap.finance/swap?outputCurrency=0x2072fBD640d13b547261Cf13e47C96212fDE746b" target="_blank" class="ml-4 bg-glow-gold text-slate-900 px-4 py-2 rounded-full font-semibold hover:opacity-90 transition">Buy AUR</a>
+                
+            </nav>
+
+            <div class="md:hidden">
+                <a href="https://pancakeswap.finance/swap?outputCurrency=0x2072fBD640d13b547261Cf13e47C96212fDE746b" target="_blank" class="bg-glow-gold text-slate-900 px-4 py-2 rounded-full font-semibold hover:opacity-90 transition">Buy AUR</a>
+            </div>
         </div>
-        <div class="p-4 bg-white rounded-xl card-shadow">
-          <div class="text-sm text-slate-500">Sell Tax</div>
-          <div class="mt-2 font-semibold text-slate-900">2% Holders • 3% Dev • 1% Liquidity</div>
-        </div>
-      </div>
-    </div>
+    </header>
 
-    <div class="md:w-5/12 w-full">
-      <div class="bg-white p-6 rounded-2xl card-shadow">
-        <h3 class="text-lg font-bold text-sky-900">Quick Summary</h3>
-        <p class="mt-3 text-sm text-slate-600">Aurium distributes rewards to holders and secures the project's growth through a development fund. Liquidity is reinforced quarterly on the official <strong>AUR/USDC</strong> pair.</p>
+    <section class="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-10">
+        <div class="md:w-7/12">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-sky-900 glow-gold">Aureum (AUR)</h1>
+            <p class="mt-4 text-xl text-slate-600">A decentralized token powering Play-to-Earn games, NFTs and DeFi, building a robust and rewarding ecosystem on the **BNB Smart Chain (BSC)**.</p>
 
-        <div class="mt-6 grid grid-cols-1 gap-3">
-          <div class="flex items-center justify-between">
-            <div class="text-sm text-slate-600">Reflection (Holders)</div>
-            <div class="font-semibold">2%</div>
-          </div>
-          <div class="flex items-center justify-between">
-            <div class="text-sm text-slate-600">Dev Fund (Buy)</div>
-            <div class="font-semibold">4%</div>
-          </div>
-          <div class="flex items-center justify-between">
-            <div class="text-sm text-slate-600">Dev Fund (Sell)</div>
-            <div class="font-semibold">3%</div>
-          </div>
-          <div class="flex items-center justify-between">
-            <div class="text-sm text-slate-600">Liquidity (Sell reserved)</div>
-            <div class="font-semibold">1%</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+            <div class="mt-8 flex flex-wrap gap-4">
+                
+                <a href="https://drive.google.com/drive/folders/14uKl_hTjyN9S6fzMKXqaTjkAXHaqqGlv?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 bg-glow-blue text-white px-5 py-3 rounded-full font-bold hover:scale-[1.03] transition">
+                    📄 Whitepaper
+                </a>
+                
+                <a href="https://bscscan.com/address/0x2072fBD640d13b547261Cf13e47C96212fDE746b" target="_blank" class="inline-flex items-center gap-2 bg-yellow-600 text-white px-5 py-3 rounded-full font-bold hover:scale-[1.03] transition shadow-lg shadow-yellow-900/50">
+                    🔗 Contract (BSC)
+                </a>
 
-  <!-- ABOUT -->
-  <section id="about" class="bg-white border-t border-b border-slate-100">
-    <div class="max-w-6xl mx-auto px-6 py-16">
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <h2 class="text-3xl font-extrabold text-sky-900">About Aureum</h2>
-          <p class="mt-4 text-slate-600">Aurium (AUR) is designed as a scalable, community-driven token on Polygon, aimed at powering a diverse Web3 ecosystem: Play-to-Earn games, NFTs with utility and DeFi integrations. The protocol emphasizes sustainability, transparency and long-term value creation for holders.</p>
-
-          <ul class="mt-6 space-y-3 text-slate-600">
-            <li>• Built on Polygon for low fees and high throughput.</li>
-            <li>• Tokenomics that reward long-term holders and fund growth.</li>
-            <li>• Governance planned via multisig & timelock for critical changes.</li>
-          </ul>
+                <a href="https://pancakeswap.finance/swap?outputCurrency=0x2072fBD640d13b547261Cf13e47C96212fDE746b" target="_blank" class="inline-flex items-center gap-2 bg-pink-600 text-white px-5 py-3 rounded-full font-bold hover:scale-[1.03] transition shadow-lg shadow-pink-900/50">
+                    🥞 Buy on PancakeSwap
+                </a>
+                
+                <a href="https://www.dextools.io/app/en/bnb/pair-explorer/0x2072fBD640d13b547261Cf13e47C96212fDE746b" target="_blank" class="inline-flex items-center gap-2 bg-green-500 text-slate-900 px-5 py-3 rounded-full font-bold hover:scale-[1.03] transition shadow-lg shadow-green-900/50">
+                    📈 Live Chart (DEXT)
+                </a>
+            </div>
+            
+            <div class="mt-10 p-5 card-component rounded-2xl">
+                <p class="text-sm text-white/80">**BSC Contract Address:** 0x2072fBD640d13b547261Cf13e47C96212fDE746b</p>
+            </div>
         </div>
 
-        <div class="p-6 bg-slate-50 rounded-xl card-shadow">
-          <h3 class="text-lg font-semibold text-sky-900">Why Polygon?</h3>
-          <p class="mt-3 text-slate-600">Low transaction costs and wide DeFi ecosystem make Polygon ideal for game and NFT interactions — enabling Aurium to scale user experiences with minimal friction.</p>
+        <div class="md:w-5/12 w-full">
+            <img src="hero-token.jpg" alt="Aureum Gold Coin" class="w-full h-auto rounded-xl shadow-2xl shadow-yellow-800/50 transition hover:scale-[1.01]"/>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- BENEFITS -->
-  <section class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-extrabold text-center text-sky-900">Key Benefits</h2>
-    <div class="mt-8 grid md:grid-cols-3 gap-6">
-      <div class="p-6 bg-white rounded-xl card-shadow">
-        <h4 class="font-semibold text-lg">Rewards for Holders</h4>
-        <p class="mt-2 text-slate-600 text-sm">2% of every transaction is redistributed automatically among holders — no staking required.</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl card-shadow">
-        <h4 class="font-semibold text-lg">Sustainable Development Fund</h4>
-        <p class="mt-2 text-slate-600 text-sm">A portion of fees funds marketing, partnerships and development of games & NFT utilities.</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl card-shadow">
-        <h4 class="font-semibold text-lg">Planned Liquidity Reinforcement</h4>
-        <p class="mt-2 text-slate-600 text-sm">Liquidity increases are executed manually every quarter on the AUR/USDC pair to improve market depth.</p>
-      </div>
-    </div>
-  </section>
+    <section id="about" class="border-t border-b border-slate-100 py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-sky-900 glow-gold">About Aureum</h2>
+                    <p class="mt-4 text-slate-600">Aurium (AUR) is designed as a scalable, community-driven token on the **BNB Smart Chain (BSC)**, aimed at powering a diverse Web3 ecosystem: Play-to-Earn games, NFTs with utility and DeFi integrations. The protocol emphasizes sustainability, transparency and long-term value creation for holders.</p>
 
-  <!-- TOKENOMICS -->
-  <section id="tokenomics" class="bg-white border-t border-b border-slate-100">
-    <div class="max-w-4xl mx-auto px-6 py-16">
-      <h2 class="text-3xl font-extrabold text-center text-sky-900">Tokenomics</h2>
+                    <ul class="mt-6 space-y-3 text-white/80">
+                        <li>✅ Built on **BSC** for low fees and high transaction throughput.</li>
+                        <li>✅ Tokenomics that reward long-term holders and fund ecosystem growth.</li>
+                        <li>✅ Governance planned via multisig & timelock for critical changes.</li>
+                    </ul>
+                </div>
 
-      <p class="mt-4 text-center text-slate-600">Fees differ depending on transaction direction. All fees are transparent and governed via on-chain events and multisig operations.</p>
-
-      <div class="mt-8 overflow-x-auto">
-        <table class="w-full text-sm rounded-lg overflow-hidden">
-          <thead class="bg-[#004080] text-white">
-            <tr>
-              <th class="py-3 px-4 text-left">Type</th>
-              <th class="py-3 px-4">Holders</th>
-              <th class="py-3 px-4">Dev</th>
-              <th class="py-3 px-4">Liquidity</th>
-              <th class="py-3 px-4">Total</th>
-            </tr>
-          </thead>
-          <tbody class="bg-white divide-y">
-            <tr>
-              <td class="py-4 px-4 text-left font-medium">Buy</td>
-              <td class="py-4 px-4 text-center">2%</td>
-              <td class="py-4 px-4 text-center">4%</td>
-              <td class="py-4 px-4 text-center">0%</td>
-              <td class="py-4 px-4 text-center font-semibold">6%</td>
-            </tr>
-            <tr>
-              <td class="py-4 px-4 text-left font-medium">Sell</td>
-              <td class="py-4 px-4 text-center">2%</td>
-              <td class="py-4 px-4 text-center">3%</td>
-              <td class="py-4 px-4 text-center">1%</td>
-              <td class="py-4 px-4 text-center font-semibold">6%</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="mt-6 text-sm text-slate-600">
-        <p><strong>Note:</strong> Liquidity reinforcements will be executed manually by the Aureum team using funds accumulated in the Dev Wallet and added to the official <strong>AUR/USDC</strong> pool every three months.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ROADMAP -->
-  <section id="roadmap" class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-extrabold text-center text-sky-900">Roadmap</h2>
-
-    <div class="mt-10 grid md:grid-cols-4 gap-6">
-      <div class="p-6 bg-white rounded-xl card-shadow">
-        <h4 class="font-bold">Phase 1 — Foundation</h4>
-        <p class="mt-2 text-sm text-slate-600">Token launch, community building, initial listings on DEX.</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl card-shadow">
-        <h4 class="font-bold">Phase 2 — Expansion</h4>
-        <p class="mt-2 text-sm text-slate-600">Strategic partnerships, marketing campaigns, cross-chain exploration.</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl card-shadow">
-        <h4 class="font-bold">Phase 3 — Ecosystem</h4>
-        <p class="mt-2 text-sm text-slate-600">Launch of Web3 games, NFT drops and marketplace integrations.</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl card-shadow">
-        <h4 class="font-bold">Phase 4 — Global Scale</h4>
-        <p class="mt-2 text-sm text-slate-600">CEX listings, expanded game catalog, DAO/governance roadmap.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ECOSYSTEM -->
-  <section class="bg-white border-t border-b border-slate-100">
-    <div class="max-w-6xl mx-auto px-6 py-16">
-      <h2 class="text-3xl font-extrabold text-center text-sky-900">Aureum Ecosystem</h2>
-      <p class="mt-4 text-center text-slate-600 max-w-2xl mx-auto">Aureum is more than a token. It is the backbone for games, NFT experiences and DeFi utilities. Holders will access exclusive beta tests, NFT pre-sales and in-game benefits.</p>
-
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <div class="p-6 bg-slate-50 rounded-xl card-shadow">
-          <h4 class="font-semibold">Play-to-Earn Games</h4>
-          <p class="mt-2 text-sm text-slate-600">Economies powered by AUR, rewarding skill and participation.</p>
+                <div class="p-6 rounded-xl card-component">
+                    <h3 class="text-xl font-semibold text-sky-900">Why BNB Smart Chain?</h3>
+                    <p class="mt-3 text-slate-600">Ultra-low transaction costs and wide DeFi ecosystem make the BSC ideal for game and NFT interactions, enabling Aurium to scale user experiences with minimal friction and maximum speed.</p>
+                </div>
+            </div>
         </div>
-        <div class="p-6 bg-slate-50 rounded-xl card-shadow">
-          <h4 class="font-semibold">NFT Utilities</h4>
-          <p class="mt-2 text-sm text-slate-600">NFTs that grant in-game perks, access and real utility across the ecosystem.</p>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-extrabold text-center text-sky-900 glow-gold">Key Benefits</h2>
+        <div class="mt-10 grid md:grid-cols-3 gap-6">
+            <div class="p-6 rounded-xl card-component hover:border-blue-400">
+                <h4 class="font-semibold text-xl text-white">Rewards for Holders</h4>
+                <p class="mt-2 text-slate-600">2% of every transaction is redistributed automatically among holders — **no staking required**.</p>
+            </div>
+            <div class="p-6 rounded-xl card-component hover:border-blue-400">
+                <h4 class="font-semibold text-xl text-white">Sustainable Development Fund</h4>
+                <p class="mt-2 text-slate-600">A dedicated portion of fees funds essential marketing, partnerships and the development of new games & NFT utilities.</p>
+            </div>
+            <div class="p-6 rounded-xl card-component hover:border-blue-400">
+                <h4 class="font-semibold text-xl text-white">Planned Liquidity Reinforcement</h4>
+                <p class="mt-2 text-slate-600">Liquidity increases are executed manually every quarter on the AUR/USDC pair to improve market depth and stability.</p>
+            </div>
         </div>
-        <div class="p-6 bg-slate-50 rounded-xl card-shadow">
-          <h4 class="font-semibold">DeFi Integrations</h4>
-          <p class="mt-2 text-sm text-slate-600">Staking, liquidity programs and yield utilities designed for holders.</p>
+    </section>
+
+    <section id="tokenomics" class="border-t border-b border-slate-100 py-16">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-extrabold text-center text-sky-900 glow-gold">Tokenomics</h2>
+
+            <p class="mt-4 text-center text-slate-600">Fees differ depending on transaction direction. All fees are transparent and governed via on-chain events and multisig operations.</p>
+
+            <div class="mt-10 overflow-x-auto rounded-lg card-component">
+                <table class="w-full text-sm tokenomics-table">
+                    <thead class="bg-[#004080] text-white">
+                        <tr>
+                            <th class="py-3 px-4 text-left">Type</th>
+                            <th class="py-3 px-4">Holders</th>
+                            <th class="py-3 px-4">Dev</th>
+                            <th class="py-3 px-4">Liquidity</th>
+                            <th class="py-3 px-4">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/10">
+                        <tr>
+                            <td class="py-4 px-4 text-left font-medium text-sky-900">Buy</td>
+                            <td class="py-4 px-4 text-center">2%</td>
+                            <td class="py-4 px-4 text-center">4%</td>
+                            <td class="py-4 px-4 text-center">0%</td>
+                            <td class="py-4 px-4 text-center font-bold text-white">6%</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-4 text-left font-medium text-sky-900">Sell</td>
+                            <td class="py-4 px-4 text-center">2%</td>
+                            <td class="py-4 px-4 text-center">3%</td>
+                            <td class="py-4 px-4 text-center">1%</td>
+                            <td class="py-4 px-4 text-center font-bold text-white">6%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-6 text-sm text-slate-600">
+                <p><strong>Note:</strong> Liquidity reinforcements will be executed manually by the Aureum team using funds accumulated in the Dev Wallet and added to the official **AUR/USDC** pool every three months.</p>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- COMMUNITY -->
-  <section id="community" class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-extrabold text-center text-sky-900">Join the Community</h2>
+    <section id="roadmap" class="max-w-6xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-extrabold text-center text-sky-900 glow-gold">Roadmap</h2>
 
-    <div class="mt-8 flex flex-col md:flex-row gap-6 items-center justify-center">
-      <a href="https://x.com/AureumDeFi" target="_blank" class="w-full md:w-auto inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-[#004080] text-white font-semibold shadow">🐦 Twitter / X</a>
-      <a href="https://www.instagram.com/aureum.project" target="_blank" class="w-full md:w-auto inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-white border border-slate-200 text-slate-800 font-semibold shadow">📸 Instagram</a>
-    </div>
-
-    <p class="mt-6 text-center text-sm text-slate-500">Stay updated: follow our channels for announcements, airdrops and roadmap milestones.</p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-[#012a49] text-white">
-    <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div>
-        <div class="font-bold text-lg">Aureum</div>
-        <div class="text-slate-300 text-sm">© 2025 Aurium Project — All rights reserved</div>
-      </div>
-      <div class="text-sm text-slate-300">
-        <div>Official contract: <a href="https://polygonscan.com/address/YOUR_CONTRACT" target="_blank" class="underline">polygonscan</a></div>
-        <div class="mt-2">Whitepaper: <a href="whitepaper.pdf" target="_blank" class="underline">Download</a></div>
-      </div>
-      <div>
-        <div class="flex items-center gap-3">
-          <a href="https://x.com/AureumDeFi" target="_blank" aria-label="Twitter/X" class="text-slate-300 hover:text-white">🐦</a>
-          <a href="https://www.instagram.com/aureum.project" target="_blank" aria-label="Instagram" class="text-slate-300 hover:text-white">📸</a>
+        <div class="mt-10 grid md:grid-cols-4 gap-6">
+            <div class="p-6 rounded-xl card-component">
+                <h4 class="font-bold text-white text-lg">Phase 1 — Foundation</h4>
+                <p class="mt-2 text-sm text-slate-600">Token launch, community building, initial listings on DEX.</p>
+            </div>
+            <div class="p-6 rounded-xl card-component">
+                <h4 class="font-bold text-white text-lg">Phase 2 — Expansion</h4>
+                <p class="mt-2 text-sm text-slate-600">Strategic partnerships, marketing campaigns, cross-chain exploration.</p>
+            </div>
+            <div class="p-6 rounded-xl card-component border-l-4 border-yellow-500">
+                <h4 class="font-bold text-white text-lg">Phase 3 — Ecosystem (Current)</h4>
+                <p class="mt-2 text-sm text-slate-600">Launch of Web3 games, NFT drops, and marketplace integrations.</p>
+            </div>
+            <div class="p-6 rounded-xl card-component">
+                <h4 class="font-bold text-white text-lg">Phase 4 — Global Scale</h4>
+                <p class="mt-2 text-sm text-slate-600">CEX listings, expanded game catalog, DAO/governance roadmap.</p>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <script>
-    // small mobile menu toggle
-    const menuBtn = document.getElementById('menuBtn');
-    menuBtn?.addEventListener('click', () => {
-      // naive mobile nav (you can replace with actual mobile menu)
-      alert('Mobile menu: use page anchors (About, Tokenomics, Roadmap, Community).');
-    });
-  </script>
+    <section class="border-t border-b border-slate-100 py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-extrabold text-center text-sky-900 glow-gold">Aureum Ecosystem</h2>
+            <p class="mt-4 text-center text-slate-600 max-w-2xl mx-auto">Aureum is more than a token. It is the backbone for games, NFT experiences and DeFi utilities. Holders will access exclusive beta tests, NFT pre-sales and in-game benefits.</p>
+
+            <div class="mt-10 grid md:grid-cols-3 gap-6">
+                <div class="p-6 rounded-xl card-component">
+                    <h4 class="font-semibold text-xl text-white">Play-to-Earn Games</h4>
+                    <p class="mt-2 text-sm text-slate-600">Economies powered by AUR, rewarding skill and participation.</p>
+                </div>
+                <div class="p-6 rounded-xl card-component">
+                    <h4 class="font-semibold text-xl text-white">NFT Utilities</h4>
+                    <p class="mt-2 text-sm text-slate-600">NFTs that grant in-game perks, access and real utility across the ecosystem.</p>
+                </div>
+                <div class="p-6 rounded-xl card-component">
+                    <h4 class="font-semibold text-xl text-white">DeFi Integrations</h4>
+                    <p class="mt-2 text-sm text-slate-600">Staking, liquidity programs and yield utilities designed for holders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="community" class="max-w-6xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-extrabold text-center text-sky-900 glow-gold">Join the Community</h2>
+
+            <div class="mt-10 flex flex-wrap gap-4 items-center justify-center">
+                
+                <a href="https://t.me/+AH0Y4r9qxR84YzNh" target="_blank" class="inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-blue-600 text-white font-semibold hover:scale-105 transition shadow-lg shadow-blue-900/50">
+                    <span class="text-xl">💬</span> Telegram
+                </a>
+                
+                <a href="https://discord.gg/YEx4yFx64M" target="_blank" class="inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-indigo-600 text-white font-semibold hover:scale-105 transition shadow-lg shadow-indigo-900/50">
+                    <span class="text-xl">🎙️</span> Discord
+                </a>
+                
+                <a href="https://x.com/AureumDeFi" target="_blank" class="inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-gray-900 text-white font-semibold hover:scale-105 transition shadow-lg shadow-gray-950/50 border border-white/20 hover:border-neon-blue hover:shadow-neon-blue">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18.901 1.996h3.088l-7.794 8.799 9.38 11.205h-7.795l-5.834-6.985-7.794 6.985h-3.088l8.281-9.351-9.617-10.654h7.794l4.986 6.002 8.761-6.002zM10.875 19.387h1.49l-7.253-14.78h-1.49l7.253 14.78z"/></svg>
+                    X (Twitter)
+                </a>
+                
+                <a href="https://www.instagram.com/aureum.project" target="_blank" class="inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-pink-700 text-white font-semibold hover:scale-105 transition shadow-lg shadow-pink-900/50">
+                    <span class="text-xl">📸</span> Instagram
+                </a>
+            </div>
+
+            <p class="mt-8 text-center text-sm text-slate-600">Stay updated: follow our channels for announcements, airdrops and roadmap milestones.</p>
+    </section>
+
+    <footer class="bg-[#000000] text-white">
+        <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <div class="font-bold text-xl text-sky-900 glow-gold">Aureum</div>
+                <div class="text-slate-500 text-sm">© 2025 Aureum Project — All rights reserved. Operating on **BNB Smart Chain (BSC)**.</div>
+            </div>
+            
+            <div class="text-sm text-slate-500 flex flex-col items-center md:items-end">
+                <div class="flex gap-4">
+                    <a href="https://bscscan.com/address/0x2072fBD640d13b547261Cf13e47C96212fDE746b" target="_blank" class="hover:text-white underline">Contract (BSC)</a>
+                    <a href="https://drive.google.com/drive/folders/14uKl_hTjyN9S6fzMKXqaTjkAXHaqqGlv?usp=drive_link" target="_blank" class="hover:text-white underline">Whitepaper</a>
+                </div>
+                <div class="mt-2">Contact: <a href="mailto:aureum.suport@gmail.com" class="text-sky-900 glow-gold hover:text-white">aureum.suport@gmail.com</a></div>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
